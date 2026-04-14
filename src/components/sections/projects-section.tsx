@@ -79,7 +79,8 @@ export function ProjectsSection() {
                     src={project.image}
                     alt={`${project.title} preview`}
                     fill
-                    loading="lazy"
+                    loading={index < 2 ? "eager" : "lazy"}
+                    fetchPriority={index < 2 ? "high" : "auto"}
                     className="object-contain p-3 transition duration-500 group-hover:scale-[1.02]"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
