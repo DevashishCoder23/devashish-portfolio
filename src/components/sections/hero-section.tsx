@@ -1,8 +1,24 @@
+"use client";
+
 import Image from "next/image";
 import { Code2, Globe, Mail } from "lucide-react";
+import { useEffect, useState } from "react";
 import { contactInfo, heroContent, socialLinks } from "@/data/portfolio";
 
 export function HeroSection() {
+  const [isPreviewOpen, setIsPreviewOpen] = useState(false);
+
+  useEffect(() => {
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsPreviewOpen(false);
+      }
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, []);
+
   const getSocialIcon = (label: string) => {
     if (label === "GitHub") return <Code2 size={14} />;
     if (label === "LinkedIn") return <Globe size={14} />;
@@ -50,14 +66,21 @@ export function HeroSection() {
 
       <aside className="space-y-6 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900">
         <div className="flex items-center gap-4">
-          <Image
-            src="/profile-devashish.png"
-            alt="Portrait of Devashish Sharma"
-            width={84}
-            height={84}
-            priority
-            className="rounded-full border-2 border-cyan-200 object-cover dark:border-cyan-500/50"
-          />
+          <button
+            type="button"
+            onClick={() => setIsPreviewOpen(true)}
+            className="rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500"
+            aria-label="Open profile photo preview"
+          >
+            <Image
+              src="/profile-devashish.png"
+              alt="Portrait of Devashish Sharma"
+              width={84}
+              height={84}
+              priority
+              className="rounded-full border-2 border-cyan-200 object-cover transition hover:scale-[1.03] dark:border-cyan-500/50"
+            />
+          </button>
           <div>
             <p className="text-sm font-semibold text-slate-900 dark:text-slate-100">{heroContent.name}</p>
             <p className="text-xs text-slate-500 dark:text-slate-400">{heroContent.role}</p>
@@ -86,6 +109,38 @@ export function HeroSection() {
           </ul>
         </div>
       </aside>
+
+      {isPreviewOpen ? (
+        <div
+          className="fixed inset-0 z-[60] flex items-center justify-center bg-slate-950/80 p-4"
+          onClick={() => setIsPreviewOpen(false)}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Profile photo preview"
+        >
+          <div
+            className="relative w-full max-w-xl overflow-hidden rounded-2xl border border-slate-700 bg-slate-900"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <Image
+              src="/profile-devashish.png"
+              alt="Devashish Sharma profile preview"
+              width={900}
+              height={900}
+              className="h-auto w-full object-cover"
+              priority
+            />
+            <button
+              type="button"
+              onClick={() => setIsPreviewOpen(false)}
+              className="absolute right-3 top-3 rounded-full bg-slate-950/75 px-3 py-1 text-sm font-medium text-white transition hover:bg-slate-800"
+              aria-label="Close preview"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      ) : null}
     </section>
   );
 }
