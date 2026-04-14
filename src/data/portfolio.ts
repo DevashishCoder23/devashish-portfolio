@@ -82,8 +82,7 @@ export const projects: Project[] = [
     techStack: ["React.js", "TypeScript", "Sass", "Redux Toolkit", "React Context", "WebSockets"],
     category: "frontend",
     image: "/projects/gems-exchange.svg",
-    liveDemo: "https://example.com/gems-exchange",
-    github: "https://github.com/username/gems-exchange",
+    liveDemo: "https://www.gems.trade/",
   },
   {
     id: "coinhub",
@@ -93,8 +92,7 @@ export const projects: Project[] = [
     techStack: ["React.js", "TypeScript", "WebSockets", "TradingView", "Redux Toolkit"],
     category: "frontend",
     image: "/projects/coinhub.svg",
-    liveDemo: "https://example.com/coinhub",
-    github: "https://github.com/username/coinhub",
+    liveDemo: "https://www.coinhub.mn/",
   },
   {
     id: "holibob",
@@ -111,8 +109,6 @@ export const projects: Project[] = [
     ],
     category: "fullstack",
     image: "/projects/holibob.svg",
-    liveDemo: "https://example.com/holibob",
-    github: "https://github.com/username/holibob",
   },
 ];
 

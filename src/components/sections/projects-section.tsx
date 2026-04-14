@@ -80,22 +80,18 @@ export function ProjectsSection() {
                 ))}
               </ul>
               <div className="flex items-center gap-4 text-sm font-medium">
-                <a
-                  href={project.liveDemo}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-cyan-700 transition hover:text-cyan-500 dark:text-cyan-300"
-                >
-                  Live Demo
-                </a>
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-slate-700 transition hover:text-slate-900 dark:text-slate-200"
-                >
-                  GitHub
-                </a>
+                {project.liveDemo ? (
+                  <a
+                    href={project.liveDemo}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-cyan-700 transition hover:text-cyan-500 dark:text-cyan-300"
+                  >
+                    Live Demo
+                  </a>
+                ) : (
+                  <span className="cursor-not-allowed text-slate-400 dark:text-slate-500">Demo Disabled</span>
+                )}
               </div>
             </div>
           </motion.article>

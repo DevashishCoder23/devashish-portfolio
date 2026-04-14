@@ -29,8 +29,7 @@ export type Project = {
   techStack: string[];
   category: "frontend" | "fullstack" | "ui-engineering";
   image: string;
-  liveDemo: string;
-  github: string;
+  liveDemo?: string;
 };
 
 export type Experience = {
