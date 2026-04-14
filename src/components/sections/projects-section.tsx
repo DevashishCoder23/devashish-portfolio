@@ -37,7 +37,7 @@ export function ProjectsSection() {
               className={`rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-wide transition ${
                 isActive
                   ? "bg-slate-900 text-white dark:bg-cyan-400 dark:text-slate-900"
-                  : "border border-slate-300 text-slate-600 hover:border-slate-900 hover:text-slate-900 dark:border-slate-700 dark:text-slate-300"
+                  : "border border-slate-300 text-slate-600 hover:border-slate-900 hover:bg-slate-100 hover:text-slate-900 dark:border-slate-700 dark:text-slate-300 dark:hover:border-cyan-400/60 dark:hover:bg-slate-800 dark:hover:text-cyan-200"
               }`}
             >
               {category}

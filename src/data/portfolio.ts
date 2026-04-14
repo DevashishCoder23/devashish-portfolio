@@ -18,8 +18,8 @@ export const heroContent: HeroContent = {
 };
 
 export const socialLinks: SocialLink[] = [
-  { label: "GitHub", href: "https://github.com/username" },
-  { label: "LinkedIn", href: "https://linkedin.com/in/username" },
+  { label: "GitHub", href: "https://github.com/DevashishCoder23" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/devashishsharmafrontend/" },
   { label: "Email", href: "mailto:devashishsharma039@gmail.com" },
 ];
 
@@ -146,7 +146,7 @@ export const contactInfo: ContactInfo = {
   email: "devashishsharma039@gmail.com",
   phone: "+91 86288-38334",
   location: "Mohali, Punjab, India",
-  resumePath: "/resume.txt",
+  resumePath: "/Devashish_Sharma_Frontend_Engineer_4Y.pdf",
 };
 
 export const hobbies: string[] = [
