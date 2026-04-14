@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { MouseEvent } from "react";
 import { ThemeToggle } from "@/components/theme-toggle";
 
@@ -15,6 +15,7 @@ const navItems = [
 
 export function Navbar() {
   const [activeSection, setActiveSection] = useState<string>("about");
+  const lockObserverUntilRef = useRef<number>(0);
 
   useEffect(() => {
     const sections = navItems
@@ -25,6 +26,10 @@ export function Navbar() {
 
     const observer = new IntersectionObserver(
       (entries) => {
+        if (Date.now() < lockObserverUntilRef.current) {
+          return;
+        }
+
         const visible = entries
           .filter((entry) => entry.isIntersecting)
           .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
@@ -52,6 +57,10 @@ export function Navbar() {
 
     const navOffset = 110;
     const targetTop = target.getBoundingClientRect().top + window.scrollY - navOffset;
+    const distance = Math.abs(window.scrollY - targetTop);
+    const lockDurationMs = Math.min(1800, Math.max(700, distance * 0.8));
+
+    lockObserverUntilRef.current = Date.now() + lockDurationMs;
 
     window.scrollTo({ top: targetTop, behavior: "smooth" });
     window.history.replaceState(null, "", href);
