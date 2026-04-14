@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { contactInfo, heroContent, socialLinks } from "@/data/portfolio";
 
 export function HeroSection() {
@@ -40,6 +41,20 @@ export function HeroSection() {
       </div>
 
       <aside className="space-y-6 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+        <div className="flex items-center gap-4">
+          <Image
+            src="/profile-devashish.png"
+            alt="Portrait of Devashish Sharma"
+            width={84}
+            height={84}
+            priority
+            className="rounded-full border-2 border-cyan-200 object-cover dark:border-cyan-500/50"
+          />
+          <div>
+            <p className="text-sm font-semibold text-slate-900 dark:text-slate-100">{heroContent.name}</p>
+            <p className="text-xs text-slate-500 dark:text-slate-400">{heroContent.role}</p>
+          </div>
+        </div>
         <div>
           <p className="text-xs uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">Location</p>
           <p className="mt-2 text-sm font-medium text-slate-900 dark:text-slate-200">{heroContent.location}</p>
