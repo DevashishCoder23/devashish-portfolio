@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" fill="#0C4A6E"/>
+  <rect x="70" y="70" width="1060" height="490" rx="24" fill="#082F49"/>
+  <rect x="110" y="120" width="320" height="380" rx="14" fill="#0F172A"/>
+  <rect x="450" y="120" width="300" height="180" rx="14" fill="#0F172A"/>
+  <rect x="770" y="120" width="320" height="180" rx="14" fill="#0F172A"/>
+  <rect x="450" y="320" width="640" height="180" rx="14" fill="#0F172A"/>
+  <text x="110" y="60" fill="#A5F3FC" font-size="34" font-family="Arial, sans-serif">Holibob</text>
+  <text x="130" y="180" fill="#E2E8F0" font-size="22" font-family="Arial, sans-serif">Travel Booking</text>
+  <text x="470" y="180" fill="#E2E8F0" font-size="22" font-family="Arial, sans-serif">Micro Frontend</text>
+  <text x="790" y="180" fill="#E2E8F0" font-size="22" font-family="Arial, sans-serif">GraphQL APIs</text>
+  <text x="470" y="410" fill="#E2E8F0" font-size="22" font-family="Arial, sans-serif">Cross-device Responsive Interface</text>
+</svg>

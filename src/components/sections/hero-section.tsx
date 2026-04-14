@@ -1,0 +1,67 @@
+import { contactInfo, heroContent, socialLinks } from "@/data/portfolio";
+
+export function HeroSection() {
+  return (
+    <section className="mx-auto grid w-full max-w-6xl gap-10 px-6 py-18 md:grid-cols-[1.35fr_0.65fr] md:py-24">
+      <div className="space-y-6">
+        <p className="inline-flex rounded-full border border-cyan-200 bg-cyan-50 px-3 py-1 text-xs font-semibold tracking-wide text-cyan-700 dark:border-cyan-500/40 dark:bg-cyan-500/10 dark:text-cyan-300">
+          {heroContent.availability}
+        </p>
+        <div className="space-y-4">
+          <h1 className="text-4xl font-bold tracking-tight text-slate-900 md:text-6xl dark:text-slate-100">
+            {heroContent.name}
+          </h1>
+          <p className="text-xl font-medium text-slate-700 md:text-2xl dark:text-slate-200">{heroContent.role}</p>
+          <p className="max-w-2xl text-base leading-relaxed text-slate-600 md:text-lg dark:text-slate-300">
+            {heroContent.intro}
+          </p>
+        </div>
+        <div className="flex flex-wrap items-center gap-3">
+          <a
+            href="#projects"
+            className="rounded-full bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-slate-700 dark:bg-cyan-400 dark:text-slate-900 dark:hover:bg-cyan-300"
+          >
+            View Projects
+          </a>
+          <a
+            href="#contact"
+            className="rounded-full border border-slate-300 px-5 py-2.5 text-sm font-semibold text-slate-700 transition hover:-translate-y-0.5 hover:border-slate-900 hover:text-slate-900 dark:border-slate-600 dark:text-slate-200 dark:hover:border-slate-400"
+          >
+            Contact Me
+          </a>
+          <a
+            href={contactInfo.resumePath}
+            download
+            className="rounded-full border border-cyan-300 px-5 py-2.5 text-sm font-semibold text-cyan-700 transition hover:-translate-y-0.5 hover:bg-cyan-50 dark:border-cyan-500/60 dark:text-cyan-300 dark:hover:bg-cyan-500/10"
+          >
+            Download Resume
+          </a>
+        </div>
+      </div>
+
+      <aside className="space-y-6 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+        <div>
+          <p className="text-xs uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">Location</p>
+          <p className="mt-2 text-sm font-medium text-slate-900 dark:text-slate-200">{heroContent.location}</p>
+        </div>
+        <div>
+          <p className="text-xs uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">Connect</p>
+          <ul className="mt-3 space-y-2">
+            {socialLinks.map((link) => (
+              <li key={link.label}>
+                <a
+                  href={link.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-sm text-slate-600 transition hover:text-cyan-600 dark:text-slate-300 dark:hover:text-cyan-300"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </aside>
+    </section>
+  );
+}

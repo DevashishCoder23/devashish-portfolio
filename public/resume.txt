@@ -1,0 +1,13 @@
+Devashish Sharma
+Frontend Engineer
+
+Email: devashishsharma039@gmail.com
+Phone: +91 86288-38334
+Location: Mohali, Punjab, India
+
+Summary
+Frontend Engineer with 4 years of experience in architecting, designing, and developing scalable web applications. Expert in JavaScript, TypeScript, React.js, and Next.js.
+
+Experience
+Antier Solutions | Software Engineer | Apr 2024 - Present
+Technogetic Pvt Ltd | React Developer | Aug 2022 - Feb 2024
