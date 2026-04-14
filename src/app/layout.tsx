@@ -13,25 +13,50 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://example.com";
+const ogImagePath = "/og-image.png";
+
 export const metadata: Metadata = {
-  title: "Devashish Sharma | Frontend Engineer",
+  metadataBase: new URL(siteUrl),
+  title: "Devashish Sharma | Frontend Developer",
   description:
-    "Frontend Engineer portfolio showcasing React.js, Next.js, TypeScript, performance optimization, and production-grade web applications.",
+    "Frontend Developer portfolio showcasing modern, scalable web applications built with Next.js, React, TypeScript, and Tailwind CSS.",
   keywords: [
-    "Frontend Engineer",
-    "React.js Developer",
+    "Frontend Developer",
+    "Frontend Portfolio",
+    "React Developer",
     "Next.js Portfolio",
+    "Tailwind CSS",
     "TypeScript",
     "JavaScript",
     "Devashish Sharma",
   ],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "Devashish Sharma | Frontend Engineer",
+    title: "Devashish Sharma | Frontend Developer",
     description:
-      "Portfolio of Devashish Sharma featuring frontend projects, experience, and technical strengths.",
-    url: "https://example.com",
+      "Portfolio of Devashish Sharma featuring production-ready frontend projects, experience, and technical strengths.",
+    url: siteUrl,
     siteName: "Devashish Portfolio",
+    images: [
+      {
+        url: ogImagePath,
+        width: 1200,
+        height: 630,
+        alt: "Devashish Sharma - Frontend Developer",
+      },
+    ],
+    locale: "en_US",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Devashish Sharma | Frontend Developer",
+    description:
+      "Frontend Developer portfolio showcasing work with Next.js, React, TypeScript, and Tailwind CSS.",
+    images: [ogImagePath],
   },
 };
 
