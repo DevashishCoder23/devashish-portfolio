@@ -1,7 +1,15 @@
 import Image from "next/image";
+import { Code2, Globe, Mail } from "lucide-react";
 import { contactInfo, heroContent, socialLinks } from "@/data/portfolio";
 
 export function HeroSection() {
+  const getSocialIcon = (label: string) => {
+    if (label === "GitHub") return <Code2 size={14} />;
+    if (label === "LinkedIn") return <Globe size={14} />;
+    if (label === "Email") return <Mail size={14} />;
+    return null;
+  };
+
   return (
     <section className="mx-auto grid w-full max-w-6xl gap-10 px-6 py-18 md:grid-cols-[1.35fr_0.65fr] md:py-24">
       <div className="space-y-6">
@@ -68,8 +76,9 @@ export function HeroSection() {
                   href={link.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="text-sm text-slate-600 transition hover:text-cyan-600 dark:text-slate-300 dark:hover:text-cyan-300"
+                  className="inline-flex items-center gap-2 text-sm text-slate-600 transition hover:text-cyan-600 dark:text-slate-300 dark:hover:text-cyan-300"
                 >
+                  {getSocialIcon(link.label)}
                   {link.label}
                 </a>
               </li>

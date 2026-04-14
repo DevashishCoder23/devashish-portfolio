@@ -1,7 +1,15 @@
 import { contactInfo, hobbies, socialLinks } from "@/data/portfolio";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { Code2, Globe, Mail } from "lucide-react";
 
 export function ContactSection() {
+  const getSocialIcon = (label: string) => {
+    if (label === "GitHub") return <Code2 size={15} />;
+    if (label === "LinkedIn") return <Globe size={15} />;
+    if (label === "Email") return <Mail size={15} />;
+    return null;
+  };
+
   return (
     <section id="contact" className="mx-auto w-full max-w-6xl px-6 py-12 md:py-16">
       <SectionHeading
@@ -24,8 +32,9 @@ export function ContactSection() {
                 href={link.href}
                 target="_blank"
                 rel="noreferrer"
-                className="text-cyan-700 transition hover:text-cyan-500 dark:text-cyan-300"
+                className="inline-flex items-center gap-2 text-cyan-700 transition hover:text-cyan-500 dark:text-cyan-300"
               >
+                {getSocialIcon(link.label)}
                 {link.label}
               </a>
             ))}
